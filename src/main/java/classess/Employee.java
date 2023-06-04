@@ -8,12 +8,15 @@ package classess;
 import interfaces.Clonablee;
 import interfaces.Comparablee;
 
+import javax.swing.*;
+import javax.swing.Timer;
+import java.io.IOException;
 import java.math.BigDecimal;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Path;
 import java.text.NumberFormat;
 import java.time.LocalDate;
-import java.util.Arrays;
-import java.util.Objects;
-import java.util.Random;
+import java.util.*;
 
 /**
  * a simple class to demonstrate interfaces
@@ -82,6 +85,28 @@ public class Employee
         return Integer.compare(this.getId(), otherEmployee.getId());
     }
 
-    public static void main(String... args) throws CloneNotSupportedException {
+    public static void main(String... args) throws CloneNotSupportedException, IOException {
+        var names = new String[] {"kamar", "baraka", "kombe"};
+        Arrays.sort(names, (first, second) -> first.length() - second.length());
+        System.out.println(Arrays.toString(names));
+
+        /*Scanner in = new Scanner(Path.of("C:\\Users\\kamar\\Downloads\\Notion Backup Codes.txt"),
+            StandardCharsets.UTF_8);
+
+        Timer timer = new Timer(100, event -> {
+            try{
+                System.out.println(in.nextLine());
+            }catch (NoSuchElementException e) {
+                System.out.println("thank you");
+                System.exit(0);
+            }
+        });
+        timer.start();
+
+        JOptionPane.showMessageDialog(null, "stop?");
+        System.exit(0);*/
+
+        var emp = new Employee("akmar", 5000);
+        System.out.println(emp.compareTo(emp));
     }
 }
