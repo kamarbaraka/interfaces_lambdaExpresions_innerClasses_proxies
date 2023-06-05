@@ -1,3 +1,8 @@
+/*
+ * Copyright (c) 2023
+ * This program is released under the gpl license
+ */
+
 package interfaces;
 
 /**
@@ -8,5 +13,5 @@ package interfaces;
 
 public interface Comparablee<T> {
     String AUTHOR = "kamar baraka";
-    int compareTo(T otherObject);
+    int kamar();
 }

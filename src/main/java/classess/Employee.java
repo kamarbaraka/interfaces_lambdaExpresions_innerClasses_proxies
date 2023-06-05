@@ -8,8 +8,13 @@ package classess;
 import interfaces.Clonablee;
 import interfaces.Comparablee;
 
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.util.function.BiFunction;
+
 import javax.swing.*;
 import javax.swing.Timer;
+import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.nio.charset.StandardCharsets;
@@ -17,6 +22,7 @@ import java.nio.file.Path;
 import java.text.NumberFormat;
 import java.time.LocalDate;
 import java.util.*;
+import java.util.function.Function;
 
 /**
  * a simple class to demonstrate interfaces
@@ -43,6 +49,9 @@ public class Employee
     }
     public Employee(String name, double salary){
         this(name, salary, LocalDate.now());
+    }
+    public Employee(String name){
+        this(name, 0);
     }
     public Employee(){}
     protected void setSalary(double salary){
@@ -105,8 +114,32 @@ public class Employee
 
         JOptionPane.showMessageDialog(null, "stop?");
         System.exit(0);*/
+        BiFunction<String, Integer, String> tst = "my name is %s i'm %d \n"::formatted;//method refrence
 
-        var emp = new Employee("akmar", 5000);
-        System.out.println(emp.compareTo(emp));
+        System.out.println(tst.apply("kamar", 23));
+
+        ActionListener lst = event -> {
+            System.out.println("kamar");
+            Toolkit.getDefaultToolkit().beep();
+        };
+
+        new Timer(500, lst).start();
+        JOptionPane.showConfirmDialog(null, "do you want to quit?");
+        System.exit(12);
+
+        /*ActionListener listener = event -> {System.out.println("hello");};
+        new Timer(1000, listener).start();
+        JOptionPane.showMessageDialog(null, "quit?");
+        System.exit(0);*/
+    }
+
+    @Override
+    public String bananas() {
+        return Clonablee.super.bananas();
+    }
+
+    @Override
+    public int kamar() {
+        return 0;
     }
 }
