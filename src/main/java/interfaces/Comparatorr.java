@@ -5,6 +5,7 @@
 
 package interfaces;
 
+@FunctionalInterface
 public interface Comparatorr<T> {
     int compare(T one, T two);
 }

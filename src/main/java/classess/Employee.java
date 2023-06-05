@@ -138,8 +138,13 @@ public class Employee
         return Clonablee.super.bananas();
     }
 
-    @Override
+
     public int kamar() {
+        return 0;
+    }
+
+    @Override
+    public int kamar(int first, int second) {
         return 0;
     }
 }

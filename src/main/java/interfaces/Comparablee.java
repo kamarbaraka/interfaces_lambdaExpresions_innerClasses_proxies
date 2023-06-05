@@ -11,7 +11,8 @@ package interfaces;
  * @version 1.0
  * @since 3/06/2023*/
 
+@FunctionalInterface
 public interface Comparablee<T> {
     String AUTHOR = "kamar baraka";
-    int kamar();
+    int kamar(int first, int second);
 }

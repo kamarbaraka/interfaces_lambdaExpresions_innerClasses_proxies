@@ -79,7 +79,7 @@ public class Manager
             throw new RuntimeException(e);
         }
 
-        var test = new Manager("test subject", 657);
+        /*var test = new Manager("test subject", 657);
         try {
             var te = test.calculate(test , test.getName()::length);
             System.out.println(te);
@@ -110,13 +110,13 @@ public class Manager
         List<Manager> managers = nameStream.toList();
         managers.forEach(System.out::println);
         ArrayList<?> wilds = new ArrayList<>(names);
-        wilds.forEach(System.out::println);
+        wilds.forEach(System.out::println);*/
         //Stream<String> wildsStream = wilds.stream().filter((String s) -> s.length() < 7);
     }
     Exception ComparableeException = new Exception("comparable");
     public Integer calculate(Object o, Comparablee t)
             throws Exception {
         if (!(o instanceof Comparablee<?>)) throw ComparableeException;
-        return t.kamar();
+        return t.kamar(1, 2);
     }
 }
