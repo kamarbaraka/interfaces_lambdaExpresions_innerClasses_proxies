@@ -44,9 +44,25 @@ public class TalkingClockAsLocal {
         timer.start();
     }
 
+    /**
+     * anonymous inner class*/
+    public void start1(int interval, boolean beep){
+        var listener = new ActionListener() {
+            public void actionPerformed(ActionEvent event){
+                System.out.printf("at the beep the time is %s",
+                        Instant.ofEpochMilli(event.getWhen()));
+                if (beep) Toolkit.getDefaultToolkit().beep();
+            }
+        };
+        var timer = new Timer(1000, listener);
+        timer.start();
+    }
+
     public static void main(String... args){
 
-        var clock = new TalkingClockAsLocal(1000, true);
-        clock.start();
+        /*var clock = new TalkingClockAsLocal(1000, true);
+        clock.start1(1000, true);*/
+
+        System.err.println("hello kamar");
     }
 }
